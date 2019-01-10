@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomViewActivity">
+
+    <com.ranjan.materialapp.custom_views.ColorOptionsView
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:layout_marginTop="16dp"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bluesapling_loading"
+        custom:titleText="Background color"
+        custom:valueColor="@android:color/holo_green_light" />
+
+    <com.ranjan.materialapp.custom_views.ColorOptionsView
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:background="?android:selectableItemBackground"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view1"
+        custom:titleText="Foreground color"
+        custom:valueColor="@android:color/holo_orange_dark" />
+
+    <com.ranjan.materialapp.custom_views.LinedEditText
+        android:id="@+id/notepad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LinedEditText is defined as an inner class within the NoteEditor activity,
+            but it is public so that it could be accessed as NoteEditor."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view2" />
+
+    <com.ranjan.materialapp.custom_views.MyCustomView
+        android:id="@+id/customview"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@id/notepad"
+        custom:square_color="@color/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@id/customview">
+
+        <Button
+            android:id="@+id/one"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="onClick"
+            android:text="PADDING +" />
+
+        <Button
+            android:id="@+id/two"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="onClick"
+            android:text="SWAP COLOR" />
+
+        <Button
+            android:id="@+id/three"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="onClick"
+            android:text="PADDING -" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

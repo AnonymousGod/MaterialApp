@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".AnimationActivity"
+        tools:showIn="@layout/activity_main">
+
+        <ImageView
+            android:id="@+id/object_animator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@drawable/ic_motorcycle_black_24dp"
+            custom:layout_constraintEnd_toStartOf="@id/value_animator"
+            custom:layout_constraintHorizontal_chainStyle="spread_inside"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/value_animator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@drawable/ic_flight_black_24dp"
+            custom:layout_constraintEnd_toStartOf="@id/animation_list"
+            custom:layout_constraintHorizontal_chainStyle="spread_inside"
+            custom:layout_constraintStart_toEndOf="@id/object_animator"
+            custom:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/animation_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            custom:layout_constraintEnd_toStartOf="@id/xml_animator"
+            custom:layout_constraintHorizontal_chainStyle="spread_inside"
+            custom:layout_constraintStart_toEndOf="@id/value_animator"
+            custom:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/xml_animator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/xml_animator_vector"
+            app:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintHorizontal_chainStyle="spread_inside"
+            custom:layout_constraintStart_toEndOf="@id/animation_list"
+            custom:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:elevation="8dp"
+            android:stateListAnimator="@drawable/button_back"
+            android:text="Press Me"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/object_animator" />
+
+        <LinearLayout
+            android:id="@+id/rectangle_background"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_background"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Drawn from xml"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/bluesapling_loading"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rectangle_background"
+            app:srcCompat="@drawable/animated_loading" />
+
+        <com.ranjan.bluesaplingloading.BlueSaplingLoading
+            android:id="@+id/bs_loading"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bluesapling_loading"
+            custom:bottomColor="#FFFF00"
+            custom:firstDuration="3000"
+            custom:middleColor="#FF00FF"
+            custom:resetDuration="1000"
+            custom:ringColor="#CE452D"
+            custom:secondDuration="2000"
+            custom:thirdDuration="1000"
+            custom:topColor="#00FFFF">
+
+        </com.ranjan.bluesaplingloading.BlueSaplingLoading>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

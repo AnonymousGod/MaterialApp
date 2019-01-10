@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BlueSaplingLoading">
+        <attr name="bottomColor" format="color" />
+        <attr name="middleColor" format="color" />
+        <attr name="topColor" format="color" />
+        <attr name="firstDuration" format="integer" />
+        <attr name="secondDuration" format="integer" />
+        <attr name="thirdDuration" format="integer" />
+        <attr name="resetDuration" format="integer" />
+        <attr name="ringColor" format="color" />
+    </declare-styleable>
+</resources>

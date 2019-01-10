@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/bluesapling_loading_grey" >
+    <target
+        android:name="bot"
+        android:animation="@anim/bot_animator" />
+    <target
+        android:name="mid"
+        android:animation="@anim/mid_animator" />
+    <target
+        android:name="top"
+        android:animation="@anim/top_animator" />
+    <target
+        android:name="top"
+        android:animation="@anim/remove_color" />
+    <target
+        android:name="mid"
+        android:animation="@anim/remove_color" />
+    <target
+        android:name="bot"
+        android:animation="@anim/remove_color" />
+</animated-vector>
