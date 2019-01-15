@@ -34,6 +34,12 @@ public class AnimationActivity extends AppCompatActivity {
     Button button;
     Handler animationHandler = new Handler();
     ImageView objectAnimator, valueAnimator, animationList, xmlAnimator, loading;
+    private Runnable runLoading = new Runnable() {
+        public void run() {
+            animateLoading();
+            animationHandler.postDelayed(this, 200);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +100,9 @@ public class AnimationActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_custom_activity:
                 startActivity(new Intent(this, CustomViewActivity.class));
+                return true;
+            case R.id.action_room_activity:
+                startActivity(new Intent(this, RoomActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -232,13 +241,6 @@ public class AnimationActivity extends AppCompatActivity {
         //scaled somehow but overall flow looks good with adjusted values.
         animationHandler.postDelayed(runLoading, 0);
     }
-
-    private Runnable runLoading = new Runnable() {
-        public void run() {
-            animateLoading();
-            animationHandler.postDelayed(this, 200);
-        }
-    };
 
     public void animateLoading() {
         Drawable simpleDrawable = loading.getDrawable();

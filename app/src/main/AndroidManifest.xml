@@ -3,6 +3,7 @@
     package="com.ranjan.materialapp">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RoomActivity"></activity>
+        <activity
+            android:name=".WebSocketActivity"
+            android:label="@string/title_activity_web_socket" />
         <activity android:name=".CustomViewActivity" />
         <activity
             android:name=".AnimationActivity"
