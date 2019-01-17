@@ -9,6 +9,7 @@ import com.ranjan.materialapp.adapters.UsersAdapter;
 import com.ranjan.materialapp.data.User;
 import com.ranjan.materialapp.data.database.AppDatabase;
 import com.ranjan.materialapp.viewmodel.UserViewModel;
+import com.ranjan.materialapp.viewmodel.UserViewModelFactory;
 
 import java.util.List;
 
@@ -26,7 +27,6 @@ public class RoomActivity extends AppCompatActivity implements UsersAdapter.Call
     RecyclerView users;
     UsersAdapter adapter;
     UserViewModel viewModel;
-    private AppDatabase mDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,9 @@ public class RoomActivity extends AppCompatActivity implements UsersAdapter.Call
         save = findViewById(R.id.save);
         users = findViewById(R.id.users);
 
-        viewModel = ViewModelProviders.of(this).get(UserViewModel.class);
+        UserViewModelFactory factory = new InjectorUtils().provideUserViewModelFactory(this);
+
+        viewModel = ViewModelProviders.of(this, factory).get(UserViewModel.class);
 
         adapter = new UsersAdapter(this);
         users.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));

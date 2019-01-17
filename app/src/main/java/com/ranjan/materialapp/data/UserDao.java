@@ -14,7 +14,7 @@ import androidx.room.Update;
  * Created by BlueSapling on 1/15/19.
  */
 @Dao
-public interface UserDao {
+public interface UserDao extends BaseDao<User>{
     @Query("SELECT * FROM users")
     List<User> getAll();
 
@@ -36,13 +36,4 @@ public interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     long[] insertAll(User... users);
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    long insert(User user);
-
-    @Update
-    void updateUsers(User... users);
-
-    @Delete
-    void delete(User user);
 }

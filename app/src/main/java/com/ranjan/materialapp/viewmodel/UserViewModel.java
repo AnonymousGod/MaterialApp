@@ -1,38 +1,32 @@
 package com.ranjan.materialapp.viewmodel;
 
-import android.app.Application;
 import android.os.AsyncTask;
 
 import com.ranjan.materialapp.data.User;
+import com.ranjan.materialapp.data.UserRepository;
 import com.ranjan.materialapp.data.database.AppDatabase;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModel;
 import io.reactivex.Completable;
-import io.reactivex.CompletableObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by BlueSapling on 1/15/19.
  */
-public class UserViewModel extends AndroidViewModel {
+public class UserViewModel extends ViewModel {
 
     List<User> userList;
-    AppDatabase appDatabase;
+    UserRepository repository;
     private LiveData<List<User>> liveUsers;
 
-    public UserViewModel(@NonNull Application application) {
-        super(application);
-
-        appDatabase = AppDatabase.getDatabase(this.getApplication());
-
-        liveUsers = appDatabase.userDao().getAllUsers();
+    public UserViewModel(UserRepository repository) {
+        this.repository = repository;
+        liveUsers = repository.getAllUsers();
     }
 
     public LiveData<List<User>> getLiveUsers() {
@@ -45,7 +39,7 @@ public class UserViewModel extends AndroidViewModel {
                 new Action() {
                     @Override
                     public void run() {
-                        appDatabase.userDao().insertAll(user);
+                        repository.insertUser(user);
                     }
                 }
         )
@@ -54,7 +48,7 @@ public class UserViewModel extends AndroidViewModel {
     }
 
     public void deleteItem(User user) {
-        new deleteAsyncTask(appDatabase).execute(user);
+        new deleteAsyncTask(repository).execute(user);
     }
 
     private static class insertAsyncTask extends AsyncTask<User, Void, Void> {
@@ -74,15 +68,15 @@ public class UserViewModel extends AndroidViewModel {
 
     private static class deleteAsyncTask extends AsyncTask<User, Void, Void> {
 
-        private AppDatabase db;
+        private UserRepository repository;
 
-        deleteAsyncTask(AppDatabase appDatabase) {
-            db = appDatabase;
+        deleteAsyncTask(UserRepository repository) {
+            this.repository = repository;
         }
 
         @Override
         protected Void doInBackground(final User... params) {
-            db.userDao().delete(params[0]);
+            repository.deleteUser(params[0]);
             return null;
         }
     }

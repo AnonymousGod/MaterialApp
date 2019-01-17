@@ -46,14 +46,14 @@ public class ColorOptionsView extends LinearLayout {
         mImage = (ImageView) getChildAt(2);
     }
 
+    public ColorOptionsView(Context context) {
+        this(context, null);
+    }
+
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         //Called when this view should assign a size and position to all of its children.
         super.onLayout(changed, l, t, r, b);
-    }
-
-    public ColorOptionsView(Context context) {
-        this(context, null);
     }
 
     public void setValueColor(int color) {
