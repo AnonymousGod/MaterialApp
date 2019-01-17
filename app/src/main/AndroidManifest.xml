@@ -12,10 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RoomActivity"></activity>
+        <activity
+            android:name=".RoomActivity"
+            android:label="@string/title_room_database" />
         <activity
             android:name=".WebSocketActivity"
-            android:label="@string/title_activity_web_socket" />
+            android:label="@string/title_custom_views" />
         <activity android:name=".CustomViewActivity" />
         <activity
             android:name=".AnimationActivity"

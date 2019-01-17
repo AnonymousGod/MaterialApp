@@ -1,6 +1,7 @@
 package com.ranjan.materialapp;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,6 +19,22 @@ public class CustomViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_custom_view);
 
         myCustomView = findViewById(R.id.customview);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return true;
+        }
     }
 
     public void onClick(View view) {

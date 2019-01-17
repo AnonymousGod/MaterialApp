@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Material App</string>
     <string name="animation_activity">Animation</string>
-    <string name="title_activity_web_socket">WebSocketActivity</string>
+    <string name="title_room_database">Room Database</string>
+    <string name="title_custom_views">Custom Views</string>
+    <string name="title_activity_web_socket">WebSocket Activity</string>
 </resources>

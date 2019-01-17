@@ -1,6 +1,7 @@
 package com.ranjan.materialapp;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -42,6 +43,10 @@ public class RoomActivity extends AppCompatActivity implements UsersAdapter.Call
 
         viewModel = ViewModelProviders.of(this, factory).get(UserViewModel.class);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         adapter = new UsersAdapter(this);
         users.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         users.setAdapter(adapter);
@@ -52,6 +57,18 @@ public class RoomActivity extends AppCompatActivity implements UsersAdapter.Call
                 adapter.updateUsers(users);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return true;
+        }
     }
 
     @Override
