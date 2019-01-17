@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_custom_activity"
-        android:title="Custom Activity" />
+        android:title="Custom Views" />
     <item
         android:id="@+id/action_room_activity"
-        android:title="Room Activity" />
+        android:title="Local Room only" />
     <item
         android:id="@+id/action_paging_activity"
-        android:title="Paging Activity" />
+        android:title="Network backed Room" />
 </menu>
