@@ -4,4 +4,6 @@
     <string name="title_room_database">Room Database</string>
     <string name="title_custom_views">Custom Views</string>
     <string name="title_activity_web_socket">WebSocket Activity</string>
+    <string name="title_activity_paging">Paging Activity</string>
+    <string name="title_activity_room_network">Network backed local DB</string>
 </resources>

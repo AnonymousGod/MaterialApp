@@ -3,6 +3,8 @@ package com.ranjan.materialapp.data.database;
 import android.content.Context;
 
 import com.ranjan.materialapp.data.Converters;
+import com.ranjan.materialapp.data.Store;
+import com.ranjan.materialapp.data.StoreDao;
 import com.ranjan.materialapp.data.User;
 import com.ranjan.materialapp.data.UserDao;
 
@@ -14,7 +16,7 @@ import androidx.room.TypeConverters;
 /**
  * Created by BlueSapling on 1/15/19.
  */
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class, Store.class}, version = 1)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase INSTANCE;
@@ -33,4 +35,6 @@ public abstract class AppDatabase extends RoomDatabase {
     }
 
     public abstract UserDao userDao();
+
+    public abstract StoreDao storeDao();
 }

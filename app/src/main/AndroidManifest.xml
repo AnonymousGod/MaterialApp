@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".RoomNetworkActivity"
+            android:label="@string/title_activity_room_network"></activity>
+        <activity
+            android:name=".paging.PagingActivity"
+            android:label="@string/title_activity_paging" />
+        <activity
             android:name=".RoomActivity"
             android:label="@string/title_room_database" />
         <activity
