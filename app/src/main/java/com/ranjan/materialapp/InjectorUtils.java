@@ -23,8 +23,8 @@ public class InjectorUtils {
         return OutletRepository.getInstance(AppDatabase.getDatabase(context).storeDao());
     }
 
-    private StoreRepository getStoreRepository(Context context) {
-        return StoreRepository.getInstance(AppDatabase.getDatabase(context).storeDao());
+    private StoreRepository getStoreRepository() {
+        return StoreRepository.getInstance();
     }
 
     public UserViewModelFactory provideUserViewModelFactory(Context context) {
@@ -37,8 +37,7 @@ public class InjectorUtils {
         return new OutletViewModelFactory(repository);
     }
 
-    StoreViewModelFactory provideStoreViewModelFactory(Context context) {
-        StoreRepository repository = getStoreRepository(context);
-        return new StoreViewModelFactory(repository);
+    StoreViewModelFactory provideStoreViewModelFactory() {
+        return new StoreViewModelFactory();
     }
 }

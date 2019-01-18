@@ -16,7 +16,7 @@
             android:name=".RoomNetworkActivity"
             android:label="@string/title_activity_room_network"></activity>
         <activity
-            android:name=".paging.PagingActivity"
+            android:name=".NetworkPagingActivity"
             android:label="@string/title_activity_paging" />
         <activity
             android:name=".RoomActivity"
