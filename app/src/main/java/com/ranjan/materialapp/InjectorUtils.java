@@ -6,6 +6,8 @@ import com.ranjan.materialapp.data.UserRepository;
 import com.ranjan.materialapp.data.database.AppDatabase;
 import com.ranjan.materialapp.network_backed_db.OutletRepository;
 import com.ranjan.materialapp.network_backed_db.OutletViewModelFactory;
+import com.ranjan.materialapp.network_paging.StoreRepository;
+import com.ranjan.materialapp.network_paging.StoreViewModelFactory;
 import com.ranjan.materialapp.viewmodel.UserViewModelFactory;
 
 /**
@@ -21,6 +23,10 @@ public class InjectorUtils {
         return OutletRepository.getInstance(AppDatabase.getDatabase(context).storeDao());
     }
 
+    private StoreRepository getStoreRepository(Context context) {
+        return StoreRepository.getInstance(AppDatabase.getDatabase(context).storeDao());
+    }
+
     public UserViewModelFactory provideUserViewModelFactory(Context context) {
         UserRepository repository = getUserRepository(context);
         return new UserViewModelFactory(repository);
@@ -29,5 +35,10 @@ public class InjectorUtils {
     public OutletViewModelFactory provideOutletViewModelFactory(Context context) {
         OutletRepository repository = getOutletRepository(context);
         return new OutletViewModelFactory(repository);
+    }
+
+    StoreViewModelFactory provideStoreViewModelFactory(Context context) {
+        StoreRepository repository = getStoreRepository(context);
+        return new StoreViewModelFactory(repository);
     }
 }

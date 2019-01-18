@@ -23,8 +23,6 @@ import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.ranjan.materialapp.paging.PagingActivity;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.widget.ImageViewCompat;
@@ -106,8 +104,11 @@ public class AnimationActivity extends AppCompatActivity {
             case R.id.action_room_activity:
                 startActivity(new Intent(this, RoomActivity.class));
                 return true;
-            case R.id.action_paging_activity:
+            case R.id.action_network_room_activity:
                 startActivity(new Intent(this, RoomNetworkActivity.class));
+                return true;
+            case R.id.action_network_paging:
+                startActivity(new Intent(this, NetworkPagingActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

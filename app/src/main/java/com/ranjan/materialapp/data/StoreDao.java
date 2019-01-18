@@ -22,7 +22,7 @@ public interface StoreDao extends BaseDao<Store> {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Store> stores);
 
-    @Query("UPDATE stores SET type = 'NewType' WHERE id = :id")
+    @Query("UPDATE stores SET type = 'shopping center', title = 'Phoenix Mall', location='Bangalore' WHERE id = :id")
     void changeType(int id);
 
 }

@@ -3,6 +3,7 @@ package com.ranjan.materialapp.data;
 import com.google.gson.annotations.SerializedName;
 
 import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -18,4 +19,8 @@ public class Store {
     @ColumnInfo(name = "type")
     @SerializedName("type")
     public String type;
+
+    @SerializedName("attributes")
+    @Embedded
+    public StoreAttributes attributes;
 }

@@ -7,7 +7,7 @@ import com.ranjan.materialapp.data.Store;
 import com.ranjan.materialapp.data.StoreDao;
 import com.ranjan.materialapp.network_backed_db.api.StoresApi;
 import com.ranjan.materialapp.network_backed_db.api.StoresApiFactory;
-import com.ranjan.materialapp.paging.StoreResponse;
+import com.ranjan.materialapp.network_paging.StoreResponse;
 
 import java.util.List;
 

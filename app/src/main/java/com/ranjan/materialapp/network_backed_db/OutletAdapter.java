@@ -37,6 +37,8 @@ public class OutletAdapter extends RecyclerView.Adapter<OutletAdapter.OutletHold
     public void onBindViewHolder(@NonNull OutletHolder holder, int position) {
         holder.storeID.setText(String.valueOf(storeList.get(position).id));
         holder.storeType.setText(storeList.get(position).type);
+        holder.storeTitle.setText(storeList.get(position).attributes.title);
+        holder.storeLocation.setText(storeList.get(position).attributes.location);
     }
 
     @Override
@@ -50,13 +52,15 @@ public class OutletAdapter extends RecyclerView.Adapter<OutletAdapter.OutletHold
     }
 
     class OutletHolder extends RecyclerView.ViewHolder {
-        TextView storeID, storeType;
+        TextView storeID, storeType, storeTitle, storeLocation;
 
         OutletHolder(@NonNull View itemView) {
             super(itemView);
 
             storeID = itemView.findViewById(R.id.item_store_id);
             storeType = itemView.findViewById(R.id.item_store_type);
+            storeTitle = itemView.findViewById(R.id.item_store_title);
+            storeLocation = itemView.findViewById(R.id.item_store_location);
         }
     }
 }

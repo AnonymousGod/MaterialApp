@@ -7,6 +7,9 @@
         android:id="@+id/action_room_activity"
         android:title="Local Room only" />
     <item
-        android:id="@+id/action_paging_activity"
+        android:id="@+id/action_network_room_activity"
         android:title="Network backed Room" />
+    <item
+        android:id="@+id/action_network_paging"
+        android:title="Network Paging Activity" />
 </menu>
