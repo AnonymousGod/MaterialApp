@@ -3,6 +3,7 @@ package com.ranjan.materialapp.data;
 import java.util.List;
 
 import androidx.lifecycle.LiveData;
+import androidx.paging.DataSource;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -16,8 +17,8 @@ public interface StoreDao extends BaseDao<Store> {
     @Query("SELECT * FROM stores")
     LiveData<List<Store>> getAllStores();
 
-    @Query("SELECT * FROM stores")
-    LiveData<List<Store>> GetAllStoreLive();
+    @Query("SELECT * FROM stores ORDER BY id DESC")
+    DataSource.Factory<Integer, Store> getStoresFromDataSource();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Store> stores);

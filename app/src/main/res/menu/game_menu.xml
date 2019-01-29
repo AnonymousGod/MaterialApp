@@ -12,4 +12,10 @@
     <item
         android:id="@+id/action_network_paging"
         android:title="Network Paging Activity" />
+    <item
+        android:id="@+id/action_room_network_paging"
+        android:title="Room Network Paging" />
+    <item
+        android:id="@+id/action_scroll_view"
+        android:title="Scrollview Activity" />
 </menu>

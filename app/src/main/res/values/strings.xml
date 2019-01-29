@@ -6,4 +6,5 @@
     <string name="title_activity_web_socket">WebSocket Activity</string>
     <string name="title_activity_paging">Paging Activity</string>
     <string name="title_activity_room_network">Network backed local DB</string>
+    <string name="title_activity_room_network_paging">Room Network Paging</string>
 </resources>

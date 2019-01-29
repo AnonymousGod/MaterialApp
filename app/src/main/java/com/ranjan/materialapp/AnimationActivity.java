@@ -110,6 +110,12 @@ public class AnimationActivity extends AppCompatActivity {
             case R.id.action_network_paging:
                 startActivity(new Intent(this, NetworkPagingActivity.class));
                 return true;
+            case R.id.action_room_network_paging:
+                startActivity(new Intent(this, RoomNetworkPagingActivity.class));
+                return true;
+            case R.id.action_scroll_view:
+                startActivity(new Intent(this, ScrollViewActivity.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

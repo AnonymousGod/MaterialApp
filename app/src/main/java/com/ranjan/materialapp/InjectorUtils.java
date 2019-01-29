@@ -8,6 +8,8 @@ import com.ranjan.materialapp.network_backed_db.OutletRepository;
 import com.ranjan.materialapp.network_backed_db.OutletViewModelFactory;
 import com.ranjan.materialapp.network_paging.StoreRepository;
 import com.ranjan.materialapp.network_paging.StoreViewModelFactory;
+import com.ranjan.materialapp.room_network_paging.LocalStoreRepository;
+import com.ranjan.materialapp.room_network_paging.RoomNetworkPagingVMFactory;
 import com.ranjan.materialapp.viewmodel.UserViewModelFactory;
 
 /**
@@ -35,6 +37,15 @@ public class InjectorUtils {
     public OutletViewModelFactory provideOutletViewModelFactory(Context context) {
         OutletRepository repository = getOutletRepository(context);
         return new OutletViewModelFactory(repository);
+    }
+
+    private LocalStoreRepository getLocalStoreRepository(Context context) {
+        return LocalStoreRepository.getInstance(context, AppDatabase.getDatabase(context).storeDao());
+    }
+
+    public RoomNetworkPagingVMFactory provideRoomNetworkPagingFactory(Context context) {
+        LocalStoreRepository repository = getLocalStoreRepository(context);
+        return new RoomNetworkPagingVMFactory(repository);
     }
 
     StoreViewModelFactory provideStoreViewModelFactory() {
