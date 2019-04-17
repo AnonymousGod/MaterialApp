@@ -18,6 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.view.animation.CycleInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
@@ -58,7 +60,11 @@ public class AnimationActivity extends AppCompatActivity {
 
 
         //Animate using multiple ObjectAnimator and combining them with AnimatorSet
-        animateObjectAnimator();
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.in_from_bottom_bounce);
+        animation.setDuration(2000);
+        animation.setInterpolator(new CycleInterpolator(5));
+        objectAnimator.startAnimation(animation);
+        //animateObjectAnimator();
         //animateObjectAnimatorAlt1();
         //animateSubclassObjectAnimators();
 
