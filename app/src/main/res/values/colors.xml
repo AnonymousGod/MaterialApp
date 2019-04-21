@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="black">#000</color>
     <color name="white">#FFF</color>
+    <color name="android_player">#b2ebf2</color>
+    <color name="exo_player">#f0f4c3</color>
 </resources>

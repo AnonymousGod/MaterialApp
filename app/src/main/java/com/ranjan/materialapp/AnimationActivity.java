@@ -25,6 +25,8 @@ import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.ranjan.materialapp.video_streaming.VideoStreamActivity;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.widget.ImageViewCompat;
@@ -121,6 +123,9 @@ public class AnimationActivity extends AppCompatActivity {
                 return true;
             case R.id.action_scroll_view:
                 startActivity(new Intent(this, ScrollViewActivity.class));
+                return true;
+            case R.id.action_video_stream:
+                startActivity(new Intent(this, VideoStreamActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
