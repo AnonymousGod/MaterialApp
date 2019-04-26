@@ -21,4 +21,7 @@
     <item
         android:id="@+id/action_video_stream"
         android:title="Video Stream" />
+    <item
+        android:id="@+id/action_onsavedinstance"
+        android:title="onSavedInstance Act" />
 </menu>

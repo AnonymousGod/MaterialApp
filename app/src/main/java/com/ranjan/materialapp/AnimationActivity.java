@@ -127,6 +127,9 @@ public class AnimationActivity extends AppCompatActivity {
             case R.id.action_video_stream:
                 startActivity(new Intent(this, VideoStreamActivity.class));
                 return true;
+            case R.id.action_onsavedinstance:
+                startActivity(new Intent(this, OnSavedInstance.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
