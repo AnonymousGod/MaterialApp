@@ -12,7 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OnSavedInstance"></activity>
+        <service
+            android:name=".bound_service.LocalService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".BinderServiceActivity" />
+        <activity android:name=".OnSavedInstanceActivity" />
         <activity android:name=".video_streaming.VideoStreamActivity" />
         <activity
             android:name=".ScrollViewActivity"

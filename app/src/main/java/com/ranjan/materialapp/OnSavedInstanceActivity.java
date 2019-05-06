@@ -10,7 +10,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class OnSavedInstance extends AppCompatActivity {
+public class OnSavedInstanceActivity extends AppCompatActivity {
     EditText editText;
     TextView textView;
     FloatingActionButton fab;
